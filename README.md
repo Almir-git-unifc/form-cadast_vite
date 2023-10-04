@@ -1,6 +1,6 @@
 form-cadast_front-in_vite-html-css
 ======================================
-Form - people registration, Front End made in react-vite using html and CSS xxxxxxxxxxxxxxxxx
+Form registration with parallelogram behind, Front html, CSS made in react vite.If you like: give me a star 🌟
 
 ---------------------------------------------------------------------------------------------------------
 
@@ -27,8 +27,6 @@ Form - people registration, Front End made in react-vite using html and CSS xxxx
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
-- [form-cadast\_front-in\_vite-html-css](#form-cadast_front-in_vite-html-css)
-  - [Table of Contents](#table-of-contents)
 - [Intro ](#intro-)
 - [Feature ](#feature-)
 - [Technologies ](#technologies-)

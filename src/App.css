@@ -1,0 +1,218 @@
+@charset "UTF-8";
+/* vamos inserir a fonte google medium 500 ubuntu */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=Poppins:wght@200;300;400;500;600&family=Ubuntu:wght@500&display=swap");
+
+* {
+  margin: 0; /* Remover toda margem */
+  padding: 0; /* Remover todo espaçamento padding */
+  box-sizing: border-box; /* preencher na largura e altura */
+  font-family: "Ubuntu", sans-serif;
+}
+
+body {
+  display: flex; /* display flex + align-items center + justify-content center Centraliza tudo */
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* largura total em vh, não use px; pois vh é de acordo com o dispositivo*/
+  background: #2e2e2e; /* cor da página será cinza escuro */
+}
+
+#paralelograma {   /* Aos 21:25 min. */
+  background: #00acd7;
+  width: 100%; /* largura do paralelograma */
+  height: 720px;  /* altura do paralelograma */
+  max-width: 70vw;  /* mas deve ser menor que 70% da largura da tela vw */
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px;
+  
+  position: absolute;
+  z-index: -1;  /*  assim o paralelograma vai para trás do formulário */
+  left: 50%; /*  translate(-50%, 0) sempre fica no centro da tela */
+  top: 50%; /* Isto também deixa no meio da altura */
+  transform: translate(-50%, -50%) skew(6deg, 3deg);/* modificar inclinação eixo X 6 graus, e eixo Y 3 graus */
+}
+
+
+section {
+  display: flex;
+  background: #ffff; /* Cor de fundo da página será branca em cada section */
+  padding: 30px 5px; /* Espaço entre elementos será 30 superior e inferiore, 5 para os lados */
+  border-radius: 10px; /* canto arredondado */
+  box-shadow: 5px 5px 15px; /* sombra, 15px para baixo */
+  max-width: 70vh; /* largura máxia de 70% da tela de qualquer dispositivo */
+  width: 70vw;
+}
+
+section h1 {
+  padding: 40px 10px; /* título tem 40px em cima e embaixo, e 10px para cada lado */
+  text-align: center; /* título alinhado ao centro */
+}
+
+fieldset {
+  border: none; /* vamos remover a borda padrão do fieldset */
+}
+
+/* Como cada fieldset tem propriedade diferente, vamos suar o nth-child */
+fieldset:nth-child(2) {
+  /* 2 é par conjunto dos nomes */
+  display: flex; /* vamos colocar um campo ao lado do outro */
+}
+
+fieldset:nth-child(4) {
+  /* 4 é para conjunto das senhas */
+  display: flex; /* vamos colocar um campo ao lado do outro */
+  padding-top: 20px; /* espaço superior 20px */
+}
+
+fieldset:nth-child(5) {
+  /* Aos 12:27 min 5 para caixa de seleção + botão */
+  display: flex; /* Caixa de seleção fica ao lado do botão */
+  width: 100%;
+  margin-top: 20px; /* acima de aceitar e do botão Criar conta é 20px */
+  padding: 0px 10px; /* Aos 12:46. Aceitar descola da borda esquerda. Espaçamento lateral 10px */
+}
+
+.container input {
+  margin: 10px 10px;
+  width: calc(100% - 20px); /* 20px corresponde a papx pra cada lado*/
+  height: 70px; /* altura dos campos input  é 70px*/
+  border: none; /* campos input não terão borda */
+  background-color: #ededed; /* cor dos campos input é cinza ededed */
+  border-radius: 4px;
+  color: #333; /* cor da fonte no campo input é de dor #333 */
+  font-size: 18px; /* tamanho da fonte dentro do input */
+  font-weight: 700; /* espessura da fonte é 700 */
+  padding: 14px 10px 0 10 px; /* espaço entre a fonte a os campso input */
+}
+
+.container {
+  position: relative; /* a posição do filhos em relação ao container será relativo, prendendo o label dentro da div  */
+}
+
+.container label {
+  /* No label do container */
+  text-transform: uppercase;
+  font-size: 14px; /* a fonte do label será 14px */
+  font-weight: 700; /* espessura da fonte do label */
+  color: #9d9d9d; /* a cor da fonte do label será cinza-claro */
+  position: absolute; /* terá uma posição absoluta, e não mudará com o documento. Os css seguirá um fluxo, mas este elemento será colocado onde quizermos, quebrando a regra geral */
+  line-height: 70px; /* altura entre as linhas */
+  top: 10px; /* ficará a 10px de distancia do topo */
+  left: 20px; /* ficará a 20px da borda da esquerda */
+  user-select: none; /* se o usuario clicar no input a label não será selecionada... */
+  pointer-events: none; /* se clicar no input eventos de mouse não serão acionados */
+  transition: 0.5s; /* movimento suave no intervalo de 0.5 segundos*/
+}
+
+
+.container input:focus ~ label,
+.container input:valid ~ label{
+/* quando clicar pra preencher, o label deve se mover, suavemente com o transition */
+	left: 20px;
+	top:  -10px;
+	color: #00acd7; /* ao tentar preencher o label ficará azul claro */
+}
+
+ #check {
+ 	width: 50%;  /* a div check ocupa metade do fieldset ; isso faz o botão ir para a outra metade*/
+           text-transform: uppercase;
+           font-size: 14px;
+           display: flex; /* centraliza elementos internos */
+ }
+
+#check input {
+	width: 25px; /* largura da caixa de seleção */
+	height: 25px; /* comprimento da caixa de seleção */
+	margin: auto 0;  /* margem centralizada na horizontal*/
+}
+
+#check label{
+	margin: auto;  /* texto to label da caixa de seleção centralizado na horizontal e margem superior e inferior 10px */
+	color: #555;  /* cor do label do checkbox */
+	transition: 0.5s;  /* 5 segundos na movimentação do checkbox */
+}
+
+#check input[type="checkbox"]:checked + label {
+  color: #00acd7;
+}
+
+
+button{
+	margin: 40px 0;  /* o botão terá margens superior e inferior de 40px*/
+	margin-left: 10px; /* margem esquerda do botão será 10px */
+	width: calc(50% - 10px); /* largura do botão é 50% menos 10px */
+	height: 70px; /* altura do botão */
+    
+	background: #00acd7;  /* cor do botão é azul */
+	color: #fff; /* texto do botão é branco */
+	font-size: 20px; /* tamanho da fonte do botão */
+	border:none;
+	border-radius: 20px;
+	cursor: pointer; /* cursor do mouse no botão é ponteiro */
+	transition: 0.3s linear; /* transição na ação (efeito hover) linear */
+}
+
+button:hover{
+	opacity: 0.85  /* 1 é visível, e 0 é invisível */
+}
+
+ img {    
+	width: 250px;
+	height: 250px;
+	margin: auto 40px;  /* imagem será centralizada na vertical, e  40px nos lados */
+}
+
+
+form link {  /* link para termos de uso */
+	text-decoration: none; /* decoração padrão removida */
+	font-size: 25px; /* tamanho da fonte de links */
+	color: #555; /* cor da fonte de links */
+	font-weight: 500;
+	padding-top: 20px;  /* distância do topo */
+	text-transform: uppercase; /* links em letras maiúsculas */
+	text-align: center; /* centralizado */
+	display:block; /* para o link ir para o centro */
+}
+
+form a:hover {
+	color: #111; /* a cor do link mudará no hover */
+}
+
+/* verificaremos se janela do dispositivo <= 1080px caso positivo sudo será aplicado */
+@media only screen and (max-width: 1080px) {
+	div#paralelograma {
+    	    height: 690px;
+	}
+	section img {        /* Se largura < 1080 retire a imagem */
+    	    display: none;
+	}
+}
+
+/* verificaremos se janela do dispositivo <= 510px caso positivo sudo será aplicado */
+@media only screen and (max-width: 510px) {
+  div#paralelograma {
+      display: none;  /* Se largura < 510 retire paralelogramo */
+  }
+  section img {
+      min-width: 95vh;   /* Se largura < 510 a section terá largura 95% horizontal  */ 
+  }
+  form {
+      width: 100%;  /*  formulário ocupará 100% da section */
+  }
+  fieldset:nth-child(2),
+  fieldset:nth-child(4),
+  fieldset:nth-child(5) { /* os fieldset ficarão em uma só coluna, um abaixo do outro */
+      flex-direction: column;
+  }
+  fieldset:nth-child(4) {
+      padding: 0px;  /* removeremos a margem interna padding dos campos de senha */
+  }
+  div#check {
+      width: 100%; /* o texto checkbox fica todo na horizontal, em toda largura */
+  }
+  button {
+     width: 100%; /* botão ficará em toda a largura */
+     margin-left: 0px; /* a margem do lado esquerdo do botão será removido */
+  }
+}
+
